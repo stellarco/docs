@@ -1,0 +1,66 @@
+---
+title: "🔧 How to Configure Your DNS for a Custom Domain"
+description: "You can use your own domain (like updates.yourcompany.com) to host your public changelog on Stellar. To do that, you’ll need to add a DNS record with your domain provider (like GoDaddy, Cloudflare, Google Domains, etc).
+
+Follow the steps below to connect your custom domain."
+---
+
+
+## 🧪 Step 1: Choose Your Subdomain
+
+Decide which subdomain you want to use, like:
+
+```
+updates.yourcompany.com
+status.yourcompany.com
+changelog.yourcompany.com
+```
+
+You’ll set this when adding a custom domain in your Stellar dashboard.
+
+---
+
+## 🧱 Step 2: Add a DNS Record
+
+Log in to your domain provider and add a **CNAME** or **ALIAS** record for your subdomain.
+
+### DNS record details:
+
+- **Type:** `CNAME` (or `ALIAS` if your provider supports it)
+- **Name / Host:** `updates` _(or whatever subdomain you chose)_
+- **Value / Points to:** `stellar-dns.com`
+- **TTL:** Default (usually "Automatic" or 3600 seconds)
+
+> 📌 If you're using a root/apex domain like `yourcompany.com`, you'll need to use an **ALIAS** or **ANAME** record instead of CNAME (since CNAMEs can't be used at the root).
+
+---
+
+## 🔍 Step 3: Verify the Domain
+
+Once the DNS record is added, return to the Stellar dashboard and we’ll automatically check for the correct setup.
+
+DNS changes may take a few minutes to a few hours to propagate globally. If everything’s configured correctly, your domain will be verified and ready to use.
+
+---
+
+## ✅ Example Setup
+
+| Setting   | Value             |
+| --------- | ----------------- |
+| Type      | CNAME             |
+| Name/Host | `updates`         |
+| Value     | `stellar-dns.com` |
+| TTL       | Automatic / 3600  |
+
+---
+
+## 💬 Need help?
+
+If you’re not sure where to update DNS records, check your provider’s help docs:
+
+- [GoDaddy](https://www.godaddy.com/help/add-a-cname-record-19236)
+- [Cloudflare](https://developers.cloudflare.com/dns/manage-dns-records/how-to/create-dns-records/)
+- [Google Domains](https://support.google.com/domains/answer/3290350)
+- [Namecheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9646/2237/how-can-i-set-up-a-cname-record-for-my-domain/)
+
+Or reach out to us—we’re happy to help\!
