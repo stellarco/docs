@@ -43,7 +43,8 @@
               "insights/overview",
               "insights/creating-first-insight",
               "insights/setting-up-categories",
-              "insights/setting-up-sources",
+              "insights/sources/overview",
+              "insights/sources/custom",
               "insights/linking-features",
               "insights/filters",
               "insights/triage"
