@@ -1,7 +1,7 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "OpenAPI Plant Store",
+    "title": "Stellar",
     "description": "A sample API that uses a plant store as an example to demonstrate features in the OpenAPI specification",
     "license": {
       "name": "MIT"
@@ -10,7 +10,7 @@
   },
   "servers": [
     {
-      "url": "http://sandbox.mintlify.com"
+      "url": "http://api.usestellar.com"
     }
   ],
   "security": [
@@ -19,9 +19,9 @@
     }
   ],
   "paths": {
-    "/plants": {
+    "/insights": {
       "get": {
-        "description": "Returns all plants from the system that the user has access to",
+        "description": "Returns all insights from the system that the user has access to",
         "parameters": [
           {
             "name": "limit",
@@ -35,13 +35,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Plant response",
+            "description": "Insight response",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Plant"
+                    "$ref": "#/components/schemas/Insight"
                   }
                 }
               }
@@ -60,9 +60,9 @@
         }
       },
       "post": {
-        "description": "Creates a new plant in the store",
+        "description": "Creates a new insight in the store",
         "requestBody": {
-          "description": "Plant to add to the store",
+          "description": "Insight to add to the store",
           "content": {
             "application/json": {
               "schema": {
@@ -74,11 +74,11 @@
         },
         "responses": {
           "200": {
-            "description": "plant response",
+            "description": "Insight response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Plant"
+                  "$ref": "#/components/schemas/Insight"
                 }
               }
             }
@@ -96,14 +96,14 @@
         }
       }
     },
-    "/plants/{id}": {
+    "/insights/{id}": {
       "delete": {
-        "description": "Deletes a single plant based on the ID supplied",
+        "description": "Deletes a single insight based on the ID supplied",
         "parameters": [
           {
             "name": "id",
             "in": "path",
-            "description": "ID of plant to delete",
+            "description": "ID of insight to delete",
             "required": true,
             "schema": {
               "type": "integer",
@@ -113,7 +113,7 @@
         ],
         "responses": {
           "204": {
-            "description": "Plant deleted",
+            "description": "Insight deleted",
             "content": {}
           },
           "400": {
@@ -130,61 +130,65 @@
       }
     }
   },
-  "webhooks": {
-    "/plant/webhook": {
-      "post": {
-        "description": "Information about a new plant added to the store",
-        "requestBody": {
-          "description": "Plant added to the store",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewPlant"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Return a 200 status to indicate that the data was received successfully"
-          }
-        }
-      }
-    }
-  },
   "components": {
     "schemas": {
-      "Plant": {
+      "Insight": {
         "required": [
-          "name"
+          "content"
         ],
         "type": "object",
         "properties": {
-          "name": {
-            "description": "The name of the plant",
+          "content": {
+            "description": "The content of the insight",
             "type": "string"
           },
           "tag": {
             "description": "Tag to specify the type",
             "type": "string"
+          },
+          "title": {
+            "description": "The title of the insight",
+            "type": "string"
+          },
+          "source": {
+            "description": "The source of the insight",
+            "type": "string"
+          },
+          "createdAt": {
+            "description": "The date and time the insight was created",
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
-      "NewPlant": {
+      "NewInsight": {
         "allOf": [
           {
-            "$ref": "#/components/schemas/Plant"
+            "$ref": "#/components/schemas/Insight"
           },
           {
             "required": [
-              "id"
+              "content"
             ],
             "type": "object",
             "properties": {
               "id": {
-                "description": "Identification number of the plant",
+                "description": "Identification number of the insight",
                 "type": "integer",
                 "format": "int64"
+              },
+              "title": {
+                "description": "The title of the insight",
+                "type": "string"
+              },
+              "source": {
+                "description": "The source of the insight",
+                "type": "string"
+              },
+              "createdAt": {
+                "description": "The date and time the insight was created",
+                "type": "string",
+                "format": "date-time"
               }
             }
           }

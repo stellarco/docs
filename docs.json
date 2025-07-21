@@ -135,12 +135,11 @@
             ]
           },
           {
-            "group": "Endpoint Examples",
+            "group": "Insights",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/insights/get",
+              "api-reference/insights/create",
+              "api-reference/insights/delete"
             ]
           }
         ]
