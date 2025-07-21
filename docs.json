@@ -43,8 +43,29 @@
               "insights/overview",
               "insights/creating-first-insight",
               "insights/setting-up-categories",
-              "insights/sources/overview",
-              "insights/sources/custom",
+              {
+                "group": "Insight Sources",
+                "pages": [
+                  "insights/sources/overview",
+                  "insights/sources/web",
+                  "insights/sources/custom",
+                  "insights/sources/chrome",
+                  "insights/sources/email",
+                  {
+                    "group": "Integrations",
+                    "pages": [
+                      "insights/sources/integrations/intercom",
+                      "insights/sources/integrations/helpscout",
+                      "insights/sources/integrations/crisp",
+                      "insights/sources/integrations/typeform",
+                      "insights/sources/integrations/tally",
+                      "insights/sources/integrations/salesforce",
+                      "insights/sources/integrations/hubspot",
+                      "insights/sources/integrations/zapier"
+                    ]
+                  }
+                ]
+              },
               "insights/linking-features",
               "insights/filters",
               "insights/triage"
