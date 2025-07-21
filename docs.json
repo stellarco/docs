@@ -129,12 +129,6 @@
             "pages": [
               "integrations/types",
               {
-                "group": "Insight Sources",
-                "pages": [
-                  "integrations/slack"
-                ]
-              },
-              {
                 "group": "Portal",
                 "pages": [
                   "integrations/kit",
