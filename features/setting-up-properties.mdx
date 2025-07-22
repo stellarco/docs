@@ -1,6 +1,153 @@
 ---
 title: 'Setting Up Properties'
-description: 'Configure custom properties for your features'
+description: 'Create custom fields to track what matters for your team'
 ---
 
-Define and manage custom properties to enhance feature tracking and organization. 
+Properties let you add custom fields to features, making Stellar fit your exact workflow. Track effort, deadlines, teams, or any data that helps you make decisions.
+
+[image]
+
+## Creating Properties
+
+<Note>
+Only Admins can create and manage properties. Contributors and Makers can use existing properties.
+</Note>
+
+1. Navigate to **Account** → **Settings**
+2. Click **Features** → **Properties**  
+3. Click **Add Property**
+4. Configure your property:
+   - **Name** - What appears in the UI
+   - **Type** - How data is entered and displayed
+5. Click **Create**
+
+[image]
+
+## Property Types
+
+### Text
+Free-form text input for notes or descriptions
+- **Use for**: Release notes, technical specs, URLs
+- **Example**: "Migration guide URL"
+
+### Number
+Numeric values for metrics
+- **Use for**: Story points, days, dollar amounts
+- **Example**: "Estimated days"
+
+### Single Select
+Choose one option from a list
+- **Use for**: Categories, phases, teams
+- **Example**: "Product area" (Dashboard, API, Mobile)
+
+### Multi Select  
+Choose multiple options
+- **Use for**: Affected platforms, tags, components
+- **Example**: "Platforms" (iOS, Android, Web)
+
+### Date
+Calendar date picker
+- **Use for**: Deadlines, launch dates, milestones
+- **Example**: "Target release date"
+
+### Member
+Select team members
+- **Use for**: Stakeholders, reviewers, secondary assignees
+- **Example**: "Technical reviewer"
+
+### Boolean
+Simple yes/no toggle
+- **Use for**: Flags, confirmations, states
+- **Example**: "Customer commitment"
+
+[image]
+
+## Examples by Use Case
+
+### Product Management
+- **Effort** (Single select): XS, S, M, L, XL
+- **Impact** (Single select): Low, Medium, High
+- **Customer Type** (Multi select): Enterprise, SMB, Startup
+- **Release** (Text): Q1 2024, Sprint 15
+
+### Engineering
+- **Tech Debt** (Boolean): Yes/No
+- **Breaking Change** (Boolean): Yes/No  
+- **Components** (Multi select): Frontend, Backend, Database
+- **Epic** (Text): Link to epic
+
+### Business Metrics
+- **ARR Impact** (Number): Dollar amount
+- **Customer Count** (Number): Affected customers
+- **Success Metric** (Text): How to measure success
+- **Business Case** (Text): Why this matters
+
+[image]
+
+## Managing Properties
+
+### Edit Properties
+1. Click the **Edit** icon next to any property
+2. Update name or settings
+3. Changes apply to all features immediately
+
+### Delete Properties
+1. Click **Delete** (use caution!)
+2. Property is removed from all features
+3. Historical data is preserved in activity logs
+
+### Reorder Properties
+Drag properties to control display order in:
+- Feature detail panels
+- Filter options
+- Table columns
+
+[image]
+
+## Using Properties Effectively
+
+### In Views
+- Add property columns to table view
+- Group kanban boards by property values
+- Sort features by any property
+
+### In Filters
+- Filter by specific property values
+- Combine multiple property filters
+- Save filtered views for quick access
+
+### In Bulk Updates
+- Select multiple features
+- Update properties in bulk
+- Save time on routine updates
+
+[image]
+
+## Best Practices
+
+**Start simple** - Add 3-5 essential properties first
+
+**Use consistent values** - "High/Medium/Low" not "High/Med/L"
+
+**Document meanings** - Share definitions with your team
+
+**Review quarterly** - Remove unused properties to reduce clutter
+
+**Consider automation** - Use properties that can be updated programmatically via API
+
+<Tip>
+Great properties make filtering and reporting powerful. Think about what questions you need to answer about your features.
+</Tip>
+
+## Common Property Sets
+
+### Basic Product Tracking
+- Status, Priority, Effort, Impact
+
+### Advanced Roadmapping  
+- Theme, Quarter, Team, Platform, Customer Segment
+
+### Metrics-Driven
+- Revenue Impact, User Count, Success Metric, Risk Level
+
+Ready to customize? Set up properties that match how your team thinks about product development.
