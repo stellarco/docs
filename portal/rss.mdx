@@ -1,6 +1,259 @@
 ---
-title: 'RSS Feeds'
-description: 'Configure RSS feeds for your portal content'
+title: 'RSS Feed'
+description: 'Auto-generated feed for your changelog'
 ---
 
-Enable RSS feeds to allow users to subscribe to your content updates through feed readers. 
+Your portal automatically generates an RSS feed, making it easy for developers and power users to follow updates in their favorite feed reader.
+
+[image]
+
+## RSS Feed URL
+
+Your feed is available at:
+```
+https://[your-portal].usestellar.com/rss
+```
+
+Or with custom domain:
+```
+https://changelog.yourcompany.com/rss
+```
+
+<Info>
+The RSS feed is automatically enabled and always up-to-date. No configuration needed!
+</Info>
+
+## What's Included
+
+### Feed Content
+Each announcement includes:
+- Title and description
+- Full content (HTML)
+- Publication date
+- Author name
+- Categories/tags
+- Direct link
+
+### Feed Metadata
+- Portal name and description
+- Logo/icon
+- Language
+- Update frequency
+- Copyright info
+
+[image]
+
+## RSS Reader Compatibility
+
+Works with all major feed readers:
+- **Feedly** - Most popular
+- **Inoreader** - Power users
+- **NewsBlur** - Open source
+- **The Old Reader** - Classic style
+- **Native apps** - NetNewsWire, Reeder
+
+### Browser Support
+Modern browsers detect RSS:
+- Shows feed preview
+- Subscribe button
+- Reader suggestions
+
+## Customization
+
+### Feed Settings
+
+Configure in **Portal** → **Settings** → **RSS**:
+
+**Item Count**
+- Default: 20 most recent
+- Maximum: 100 items
+- Ordered by publish date
+
+**Content Format**
+- Full content (default)
+- Summary only
+- Custom excerpt length
+
+**Additional Fields**
+- Include images
+- Author information
+- Category filters
+
+[image]
+
+## Category-Specific Feeds
+
+Subscribe to specific categories:
+```
+/rss?category=feature
+/rss?category=improvement
+/rss?category=bugfix
+```
+
+<Tip>
+Share category-specific feeds with different teams. Engineering might want "technical" updates while sales follows "feature" announcements.
+</Tip>
+
+## Promoting Your Feed
+
+### Add to Portal
+```html
+<!-- Auto-discovery in HTML head -->
+<link rel="alternate" type="application/rss+xml" 
+      title="Company Changelog" 
+      href="https://changelog.company.com/rss" />
+```
+
+### Visual RSS Icon
+Add RSS icon to your portal:
+- Header navigation
+- Footer links  
+- Subscription options
+- Share buttons
+
+### Documentation
+Mention in your docs:
+```markdown
+## Stay Updated
+- Email: [Subscribe](https://changelog.company.com)
+- RSS: [Feed](https://changelog.company.com/rss)
+- API: [Webhooks](/api/webhooks)
+```
+
+[image]
+
+## Developer Integration
+
+### Parsing the Feed
+```javascript
+// Fetch and parse RSS
+fetch('https://changelog.company.com/rss')
+  .then(res => res.text())
+  .then(str => new DOMParser().parseFromString(str, 'text/xml'))
+  .then(data => {
+    const items = data.querySelectorAll('item');
+    items.forEach(item => {
+      console.log({
+        title: item.querySelector('title').textContent,
+        link: item.querySelector('link').textContent,
+        date: item.querySelector('pubDate').textContent
+      });
+    });
+  });
+```
+
+### Webhook Alternative
+For real-time updates, consider:
+- Webhook notifications
+- API polling
+- WebSocket connections
+
+[image]
+
+## SEO Benefits
+
+### Search Engines
+- RSS helps discovery
+- Fresh content signals
+- Additional indexing path
+- Sitemap supplement
+
+### Content Syndication
+- Automatic republishing
+- Partner integrations
+- News aggregators
+- Industry feeds
+
+## Monitoring Usage
+
+### Analytics
+Track RSS subscribers:
+- Server log analysis
+- Unique IP counts
+- User agent detection
+- Geographic distribution
+
+### Popular Readers
+Common user agents:
+```
+Feedly/1.0
+Inoreader/1.0
+NewsBlur
+Tiny RSS
+```
+
+[image]
+
+<Warning>
+RSS feeds are public. Don't include sensitive information in announcements marked as public.
+</Warning>
+
+## Best Practices
+
+**Consistent Publishing**
+- Regular updates keep subscribers
+- Avoid flooding with many posts
+- Batch related updates
+
+**Rich Content**
+- Include images
+- Format with HTML
+- Add helpful links
+- Clear summaries
+
+**Feed Health**
+- Validate RSS format
+- Check in readers
+- Monitor errors
+- Test regularly
+
+## Troubleshooting
+
+### Feed Not Updating?
+- Check announcement is public
+- Clear feed reader cache
+- Verify publication date
+- Wait 5-10 minutes
+
+### Validation Errors?
+Use W3C Feed Validator:
+```
+https://validator.w3.org/feed/check.cgi?url=https://changelog.company.com/rss
+```
+
+### Reader Issues?
+- Check feed URL
+- Try different reader
+- Verify public access
+- Contact support
+
+[image]
+
+## Advanced Usage
+
+### IFTTT Integration
+Automate with RSS triggers:
+- Post to Slack
+- Tweet updates
+- Email digest
+- CRM updates
+
+### Custom Consumption
+- Build internal dashboards
+- Display in app
+- Monitor competitors
+- Archive updates
+
+<Tip>
+Developers love RSS! Make sure to mention your feed in API docs and developer resources.
+</Tip>
+
+## Quick Reference
+
+**Feed URL**: `/rss`  
+**Format**: RSS 2.0  
+**Updates**: Real-time  
+**Items**: 20 (default)  
+**Categories**: Via query param  
+
+Your RSS feed is ready to go! Share it with your developer community and let them follow updates their way. 

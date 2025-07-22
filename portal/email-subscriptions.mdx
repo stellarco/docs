@@ -1,6 +1,278 @@
 ---
 title: 'Email Subscriptions'
-description: 'Enable email subscriptions for your portal content'
+description: 'Build an audience for your changelog'
 ---
 
-Set up email subscriptions to keep your audience updated with the latest portal content. 
+Let visitors subscribe to your changelog and automatically receive updates when you publish new announcements. Build a direct connection with your users.
+
+[image]
+
+## How Subscriptions Work
+
+1. Visitor enters email on your portal
+2. Receives confirmation email
+3. Gets notified of new announcements
+4. Can manage preferences or unsubscribe
+
+## Enabling Subscriptions
+
+### Quick Setup
+
+1. Navigate to **Portal** → **Settings** → **Subscriptions**
+2. Toggle **Enable email subscriptions**
+3. Configure options:
+   - Confirmation email required
+   - Welcome email content
+   - Notification frequency
+4. Save changes
+
+[image]
+
+### Subscription Form
+
+Appears automatically on your portal:
+- Header subscribe button
+- Footer email capture
+- After-announcement prompt
+- Dedicated subscribe page
+
+```html
+<!-- Auto-generated form -->
+<form class="subscribe-form">
+  <input type="email" placeholder="Enter your email" />
+  <button type="submit">Subscribe</button>
+</form>
+```
+
+## Email Marketing Integration
+
+Sync subscribers with your email tools:
+
+### Available Integrations
+- **Kit (ConvertKit)** - Auto-tag subscribers
+- **Loops** - Modern email automation
+- **Mailchimp** - Coming soon
+- **Custom webhook** - Your own system
+
+[Set up email integrations →](/integrations/types#portal-integrations)
+
+[image]
+
+<Info>
+Email integrations sync in real-time. Subscribers are immediately available in your email marketing tool.
+</Info>
+
+## Notification Settings
+
+### Delivery Options
+
+**Instant**
+- Email sent immediately on publish
+- Best for urgent updates
+- Higher engagement rates
+
+**Daily Digest**
+- Groups multiple announcements
+- Sent at specified time
+- Reduces email fatigue
+
+**Weekly Summary**
+- Roundup of all updates
+- Sent on chosen day
+- Good for active changelogs
+
+### Email Content
+
+**What's Included**
+- Announcement title
+- Preview text or full content
+- Read more link
+- Category/tags
+- Unsubscribe link
+
+[image]
+
+## Customizing Emails
+
+### Email Templates
+
+Customize in **Portal** → **Settings** → **Email Templates**:
+
+**Welcome Email**
+```
+Subject: Welcome to {Company} Updates!
+
+Thanks for subscribing! You'll be the first to know about new features and improvements.
+
+Recent updates:
+{recent_announcements}
+```
+
+**Notification Email**
+```
+Subject: {announcement_title}
+
+{announcement_preview}
+
+[Read full announcement →]
+```
+
+### Branding
+- Company logo
+- Brand colors
+- Custom footer
+- Social links
+
+[image]
+
+## Managing Subscribers
+
+### Subscriber List
+
+View in **Portal** → **Subscribers**:
+- Email address
+- Subscribe date
+- Status (active/unsubscribed)
+- Last email sent
+
+### Export Options
+- CSV download
+- Filter by date range
+- Active subscribers only
+- Include custom fields
+
+### Bulk Actions
+- Import existing list
+- Remove bounced emails
+- Tag subscribers
+- Send one-time email
+
+[image]
+
+<Warning>
+Always respect unsubscribes. Stellar automatically handles opt-outs and maintains a suppression list.
+</Warning>
+
+## Growing Your List
+
+### Promotion Ideas
+
+**In Your Product**
+- Settings page link
+- Post-update prompt
+- Empty states
+- Help menu
+
+**On Your Website**
+- Footer link
+- Blog sidebar
+- About page
+- Contact page
+
+**In Communications**
+- Email signatures
+- Support responses
+- Social media
+- Release notes
+
+### Incentives
+- Early access to features
+- Exclusive content
+- Beta invitations
+- Product insights
+
+[image]
+
+## Compliance & Privacy
+
+### GDPR Compliance
+- Double opt-in available
+- Clear consent language
+- Easy unsubscribe
+- Data export on request
+
+### CAN-SPAM Compliance
+- Physical address in footer
+- Clear sender information
+- Unsubscribe link
+- No misleading subjects
+
+### Best Practices
+- Never buy email lists
+- Honor unsubscribes immediately
+- Keep content relevant
+- Test emails before sending
+
+[image]
+
+## Analytics & Performance
+
+### Key Metrics
+- **Subscribers** - Total active count
+- **Growth rate** - New per month
+- **Open rate** - Engagement level
+- **Click rate** - Content interest
+- **Unsubscribe rate** - Content relevance
+
+### Improving Performance
+
+**Subject Lines**
+- Clear and specific
+- Highlight key feature
+- Avoid spam triggers
+- A/B test variations
+
+**Send Times**
+- Tuesday-Thursday best
+- 10am recipient time
+- Avoid Mondays/Fridays
+- Test your audience
+
+**Content Quality**
+- Lead with value
+- Keep it concise
+- Use visuals
+- Clear CTAs
+
+[image]
+
+<Tip>
+Start building your list early. Even before major updates, subscribers appreciate transparency about what's coming.
+</Tip>
+
+## Advanced Features
+
+### Segmentation
+Coming soon:
+- By signup date
+- By engagement
+- By category interest
+- Custom fields
+
+### Automation
+- Welcome series
+- Re-engagement campaigns
+- Anniversary emails
+- Milestone celebrations
+
+### API Access
+```javascript
+// Subscribe via API
+fetch('https://api.usestellar.com/portal/subscribe', {
+  method: 'POST',
+  body: JSON.stringify({
+    email: 'user@example.com',
+    tags: ['beta-tester']
+  })
+});
+```
+
+## Quick Wins
+
+1. **Enable subscriptions** - Start collecting emails
+2. **Add to product** - Link from your app
+3. **Welcome email** - Set expectations
+4. **Regular updates** - Build habit
+5. **Monitor metrics** - Improve over time
+
+Ready to build your changelog audience? Enable subscriptions and start growing your direct line to users. 

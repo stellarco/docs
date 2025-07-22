@@ -1,6 +1,227 @@
 ---
-title: 'Add Analytics Integration'
-description: 'Integrate analytics tools to track portal performance'
+title: 'Analytics Integration'
+description: 'Track visitor engagement on your portal'
 ---
 
-Connect analytics tools to monitor visitor behavior and portal performance metrics. 
+Understand how visitors interact with your announcements. Connect your favorite analytics tool to track views, engagement, and subscriber growth.
+
+[image]
+
+## Available Integrations
+
+### Google Analytics
+**Most popular** - Full-featured analytics
+- Page views and unique visitors
+- Traffic sources and campaigns
+- User behavior flow
+- Real-time data
+
+[Set up Google Analytics →](/integrations/google-analytics)
+
+### Fathom Analytics
+**Privacy-focused** - Simple, cookie-free analytics
+- No cookie banners needed
+- GDPR/CCPA compliant
+- Clean, focused metrics
+- Lightweight script
+
+[Set up Fathom →](/integrations/fathom-analytics)
+
+[image]
+
+## Quick Setup
+
+1. Navigate to **Portal** → **Settings** → **Analytics**
+2. Choose your analytics provider
+3. Enter required credentials:
+   - **Google Analytics**: Measurement ID (G-XXXXXXXXXX)
+   - **Fathom**: Site ID (8 characters)
+4. Save changes
+5. Analytics starts tracking immediately
+
+<Info>
+Analytics scripts load asynchronously and won't impact your portal's performance.
+</Info>
+
+## What Gets Tracked
+
+### Automatic Events
+Both providers track:
+- Page views (each announcement)
+- Unique visitors
+- Session duration
+- Traffic sources
+- Device types
+- Geographic data
+
+### Custom Events
+Track specific actions:
+- Newsletter signups
+- Link clicks
+- Scroll depth
+- Time on page
+
+[image]
+
+## Setting Goals
+
+### Newsletter Signups
+Measure subscription conversions:
+
+**Google Analytics**
+1. Create Goal in GA
+2. Goal type: Event
+3. Category: `Newsletter`
+4. Action: `Subscribe`
+
+**Fathom Analytics**
+1. Create Goal in dashboard
+2. Name: "Newsletter Signup"
+3. Automatically tracked
+
+### Engagement Metrics
+- Announcement views
+- Average read time
+- Bounce rate
+- Return visitors
+
+[image]
+
+## Privacy Considerations
+
+### Cookie Consent
+Depending on your region:
+
+**Google Analytics**
+- May require cookie banner
+- GDPR compliance needed
+- User consent for tracking
+
+**Fathom Analytics**
+- No cookies used
+- No consent required
+- Privacy-compliant by default
+
+### Data Collection
+What's collected:
+- Aggregated visitor data
+- No personal information
+- IP addresses anonymized
+- Respects DNT headers
+
+<Warning>
+Ensure your privacy policy reflects analytics usage. Both tools offer data processing agreements if needed.
+</Warning>
+
+## Using Analytics Data
+
+### Content Strategy
+Learn what resonates:
+- Most viewed announcements
+- Traffic patterns
+- Visitor retention
+- Popular categories
+
+### Optimization
+Improve based on data:
+- Best publishing times
+- Optimal content length
+- Effective headlines
+- CTA performance
+
+[image]
+
+## Advanced Configuration
+
+### Multiple Properties
+Track portal separately:
+```javascript
+// Separate GA property
+gtag('config', 'G-PORTAL123', {
+  'send_page_view': true
+});
+```
+
+### Custom Dimensions
+Track additional data:
+- User segments
+- A/B test variants
+- Content categories
+- Author attribution
+
+### Filters & Segments
+Focus on key metrics:
+- Filter internal traffic
+- Segment by source
+- Track campaigns
+- Monitor trends
+
+[image]
+
+## Reporting Tips
+
+### Key Metrics
+**Engagement**
+- Average session duration
+- Pages per session
+- Bounce rate
+- Return visitor %
+
+**Growth**
+- Unique visitors trend
+- Newsletter signups
+- Traffic sources
+- Geographic expansion
+
+### Regular Reviews
+- Weekly traffic summary
+- Monthly growth report
+- Quarterly content audit
+- Annual strategy review
+
+<Tip>
+Set up automated reports in your analytics tool to receive weekly summaries of portal performance.
+</Tip>
+
+## Troubleshooting
+
+### Not Seeing Data?
+
+1. **Check Installation**
+   - Verify ID is correct
+   - No typos in configuration
+   - Save button clicked
+
+2. **Wait for Data**
+   - Can take 24-48 hours
+   - Check real-time view
+   - Clear browser cache
+
+3. **Verify Tracking**
+   - Use browser extensions
+   - Check network tab
+   - Look for analytics requests
+
+### Common Issues
+
+**Ad Blockers**
+- Some visitors block analytics
+- ~10-30% typically affected
+- Consider server-side tracking
+
+**Internal Traffic**
+- Exclude your IP address
+- Use filters in analytics
+- Prevent data skewing
+
+[image]
+
+## Next Steps
+
+1. Choose your analytics tool
+2. Set up tracking
+3. Create key goals
+4. Monitor for a week
+5. Adjust based on insights
+
+Ready to understand your audience? Connect analytics and start making data-driven decisions about your changelog. 

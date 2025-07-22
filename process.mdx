@@ -1,107 +1,302 @@
 ---
-title: 'Process'
-description: 'Preview changes locally to update your docs'
+title: 'The Product Development Flywheel'
+description: 'From customer feedback to shipped features - the complete Stellar workflow'
 ---
 
-<Info>
-  **Prerequisite**: Please install Node.js (version 19 or higher) before proceeding. <br />
-  Please upgrade to ```docs.json``` before proceeding and delete the legacy ```mint.json``` file.
-</Info>
+Transform how you build products with Stellar's complete development flywheel. Every insight leads to better features, and every feature closes the loop with customers.
 
-Follow these steps to install and run Mintlify on your operating system:
+[image]
 
-**Step 1**: Install Mintlify:
+## 🚀 From Idea to Shipped
 
-<CodeGroup>
+A product journey, fully powered by Stellar.
 
-  ```bash npm
-  npm i -g mintlify
-  ```
+---
 
-```bash yarn
-yarn global add mintlify
-```
+### 1. Listen Everywhere
 
-</CodeGroup>
+Collect feedback from support, sales, social, FullStory, Slack, and the web — automatically.
 
-**Step 2**: Navigate to the docs directory (where the `docs.json` file is located) and execute the following command:
+**How it works:**
+- Connect your tools (Intercom, HelpScout, email)
+- Install the Chrome extension
+- Forward emails to Stellar
+- API integrations capture the rest
 
-```bash
-mintlify dev
-```
+[Learn about insight sources →](/insights/sources/overview)
 
-A local preview of your documentation will be available at `http://localhost:3000`.
+---
 
-### Custom Ports
+### 2. Find the Signal
 
-By default, Mintlify uses port 3000. You can customize the port Mintlify runs on by using the `--port` flag. To run Mintlify on port 3333, for instance, use this command:
+Use AI to spot trends, surface themes, and turn insights into actionable product opportunities.
 
-```bash
-mintlify dev --port 3333
-```
+**AI-powered analysis:**
+- Automatic categorization with tags
+- Trend detection across insights
+- Sentiment analysis
+- Theme clustering
 
-If you attempt to run Mintlify on a port that's already in use, it will use the next available port:
+[Explore AI features →](/insights/autopilot-ai)
 
-```md
-Port 3000 is already in use. Trying 3001 instead.
-```
+---
 
-## Mintlify Versions
+### 3. Plan With Purpose
 
-Please note that each CLI release is associated with a specific version of Mintlify. If your local website doesn't align with the production version, please update the CLI:
+Create internal or public roadmaps that align your team, stakeholders, and strategy.
 
-<CodeGroup>
+**Roadmap features:**
+- Drag-and-drop prioritization
+- Custom properties for scoring
+- Team and public views
+- Timeline visualization
 
-```bash npm
-npm i -g mintlify@latest
-```
+[Build your roadmap →](/features/overview)
 
-```bash yarn
-yarn global upgrade mintlify
-```
+---
 
-</CodeGroup>
+### 4. Draft Requirements
 
-## Validating Links
+AI helps you write PRDs, tech specs, and user stories — all in one place.
 
-The CLI can assist with validating reference links made in your documentation. To identify any broken links, use the following command:
+**Document AI capabilities:**
+- Generate PRDs from linked insights
+- Technical specification drafts
+- Acceptance criteria
+- User story formatting
 
-```bash
-mintlify broken-links
-```
+[Try Document AI →](/features/document-ai)
 
-## Deployment
+---
+
+### 5. Centralize Designs
+
+Attach Figma files, prototypes, diagrams, and docs directly to each feature for full context.
+
+**Rich media support:**
+- Embed Figma designs
+- Loom walkthrough videos
+- Technical diagrams
+- Reference documents
+
+[Using embeds →](/editor/embeds)
+
+---
+
+### 6. Break Into Work
+
+Turn features into linked issues and milestones. Track real progress as work moves forward.
+
+**Development integration:**
+- GitHub two-way sync
+- Linear/Jira connections
+- Status automation
+- Progress tracking
+
+[Connect your tools →](/integrations/types)
+
+---
+
+### 7. Build Together
+
+Develop collaboratively. Comment, clarify, and iterate without losing the thread or switching tools.
+
+**Collaboration features:**
+- Threaded discussions
+- @mentions and notifications
+- Activity timeline
+- Version history
+
+---
+
+### 8. Test With Users
+
+Identify and invite beta testers from the original feedback. Gather insights before launch.
+
+**Beta management:**
+- Find users who requested the feature
+- Coordinate beta access
+- Collect structured feedback
+- Track issues pre-launch
+
+---
+
+### 9. Announce Seamlessly
+
+Share updates via changelog, email, or in-app embed — all connected to the original idea.
+
+**Announcement channels:**
+- Public changelog portal
+- Email subscribers
+- In-app changelog widget
+- RSS feed
+
+[Set up announcements →](/announcements/overview)
+
+---
+
+### 10. Close the Loop
+
+Let users know their feedback led to real change. Spark the next cycle of improvement.
+
+**Loop closing features:**
+- Auto-notify insight creators
+- Link announcements to original feedback
+- Show impact metrics
+- Gather post-launch feedback
+
+[image]
+
+## The Flywheel Effect
+
+Each cycle strengthens your product development:
+
+<CardGroup cols={2}>
+  <Card
+    title="Better Insights"
+    icon="chart-line"
+  >
+    More users share feedback when they see impact
+  </Card>
+  <Card
+    title="Faster Decisions"
+    icon="bolt"
+  >
+    Clear patterns emerge from organized data
+  </Card>
+  <Card
+    title="Aligned Teams"
+    icon="users"
+  >
+    Everyone sees the why behind what's built
+  </Card>
+  <Card
+    title="Happier Users"
+    icon="heart"
+  >
+    Features match real needs, not assumptions
+  </Card>
+</CardGroup>
+
+## Starting Your Flywheel
+
+### Week 1: Capture
+1. Connect your first insight source
+2. Import existing feedback
+3. Set up tags and properties
+4. Invite your team
+
+### Week 2: Organize
+1. Triage incoming insights
+2. Link insights to features
+3. Create your first views
+4. Identify top themes
+
+### Week 3: Plan
+1. Prioritize feature ideas
+2. Add context and designs
+3. Connect development tools
+4. Share roadmap internally
+
+### Week 4: Ship
+1. Move features through workflow
+2. Prepare announcements
+3. Launch and notify users
+4. Measure impact
+
+[image]
+
+## Success Metrics
+
+Track your flywheel performance:
+
+**Input Metrics**
+- Insights captured per week
+- Sources contributing feedback
+- Team members participating
+- Response time to feedback
+
+**Process Metrics**
+- Insights linked to features
+- Features with complete context
+- Time from insight to shipped
+- Beta tester engagement
+
+**Output Metrics**
+- Features shipped per month
+- Users notified of impact
+- Changelog subscribers
+- Customer satisfaction
+
+## Real Examples
+
+### Example: Navigation Redesign
+1. **Insights**: 47 users reported navigation confusion
+2. **Analysis**: AI identified 3 main pain points
+3. **Feature**: Created "Simplified Navigation" with linked insights
+4. **Design**: Embedded Figma prototypes for review
+5. **Beta**: Invited 10 original reporters to test
+6. **Launch**: Announced to 5,000 subscribers
+7. **Impact**: 89% reduction in navigation complaints
+
+### Example: API Rate Limits
+1. **Insights**: Developer feedback via support tickets
+2. **Pattern**: Spike in rate limit errors
+3. **Feature**: "Flexible API Limits" with technical spec
+4. **Development**: GitHub issues auto-created
+5. **Testing**: API beta program
+6. **Announcement**: Technical changelog post
+7. **Result**: 3x increase in API adoption
+
+[image]
 
 <Tip>
-  Unlimited editors available under the [Pro
-  Plan](https://mintlify.com/pricing) and above.
+The flywheel accelerates over time. Start small with one insight source and one feature. As you close loops with customers, momentum builds naturally.
 </Tip>
 
-If the deployment is successful, you should see the following:
+## Common Patterns
 
-<Frame>
-  <img src="/images/checks-passed.png" style={{ borderRadius: '0.5rem' }} />
-</Frame>
+### For B2B SaaS
+- Sales feedback → Enterprise features
+- Support tickets → Quality improvements
+- User interviews → New capabilities
 
-## Code Formatting
+### For B2C Products
+- App reviews → UX enhancements
+- Social mentions → Viral features
+- Survey responses → Market fit
 
-We suggest using extensions on your IDE to recognize and format MDX. If you're a VSCode user, consider the [MDX VSCode extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) for syntax highlighting, and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for code formatting.
+### For Developer Tools
+- GitHub issues → Bug fixes
+- Forum posts → Documentation
+- Discord chat → Feature requests
 
-## Troubleshooting
+## Get Started
 
-<AccordionGroup>
-  <Accordion title='Error: Could not load the "sharp" module using the darwin-arm64 runtime'>
+Ready to transform your product development?
 
-    This may be due to an outdated version of node. Try the following:
-    1. Remove the currently-installed version of mintlify: `npm remove -g mintlify`
-    2. Upgrade to Node v19 or higher.
-    3. Reinstall mintlify: `npm install -g mintlify`
-  </Accordion>
+<CardGroup cols={3}>
+  <Card
+    title="Connect Sources"
+    icon="plug"
+    href="/insights/sources/overview"
+  >
+    Start capturing feedback
+  </Card>
+  <Card
+    title="Create Feature"
+    icon="rocket"
+    href="/features/creating-first-feature"
+  >
+    Plan your first improvement
+  </Card>
+  <Card
+    title="Close Loop"
+    icon="circle-check"
+    href="/announcements/creating-first-announcement"
+  >
+    Notify your users
+  </Card>
+</CardGroup>
 
-  <Accordion title="Issue: Encountering an unknown error">
-  
-    Solution: Go to the root of your device and delete the \~/.mintlify folder. Afterwards, run `mintlify dev` again.
-  </Accordion>
-</AccordionGroup>
-
-Curious about what changed in the CLI version? [Check out the CLI changelog.](https://www.npmjs.com/package/mintlify?activeTab=versions)
+The best product teams don't guess what to build. They listen, learn, and deliver what users actually need. Start your flywheel today.

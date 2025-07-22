@@ -76,7 +76,8 @@
             "pages": [
               "features/overview",
               "features/creating-first-feature",
-              "features/setting-up-properties"
+              "features/setting-up-properties",
+              "features/document-ai"
             ]
           },
           {
@@ -96,7 +97,8 @@
               "announcements/creating-first-announcement",
               "announcements/additional-settings",
               "announcements/private-posts",
-              "announcements/scheduling"
+              "announcements/scheduling",
+              "announcements/automate-with-ai"
             ]
           },
           {

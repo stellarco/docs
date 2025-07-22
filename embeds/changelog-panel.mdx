@@ -1,6 +1,214 @@
 ---
 title: 'Changelog Panel'
-description: 'Embed a changelog panel widget on your website'
+description: 'Embed your announcements directly in your app'
 ---
 
-Add a changelog panel widget to your website to keep users informed about updates and new features. 
+The changelog panel lets you display recent announcements anywhere in your application. Keep users informed about updates without requiring them to visit a separate page.
+
+[image]
+
+## Quick Setup
+
+1. Navigate to **Embeds** in your Stellar dashboard
+2. Click **Create Embed** → **Changelog Panel**
+3. Customize appearance to match your brand
+4. Copy the embed code
+5. Paste into your application
+
+```html
+<script src="https://embed.usestellar.com/changelog.js" 
+        data-stellar-account="your-account-id"
+        data-stellar-embed="your-embed-id">
+</script>
+<div id="stellar-changelog"></div>
+```
+
+[image]
+
+## What Users See
+
+### Panel Features
+- **Recent announcements** - Latest updates in chronological order
+- **Unread indicators** - Red dot for new content
+- **Category badges** - Colored labels for announcement types
+- **Time stamps** - "2 days ago" format
+- **Read more** - Links to full announcement
+- **View all** - Opens your complete changelog
+
+### Responsive Design
+- Adapts to container width
+- Mobile-optimized layout
+- Smooth animations
+- Accessible markup
+
+[image]
+
+## Customization Options
+
+### Display Settings
+
+**Post Format**
+- `full` - Show complete announcement content
+- `summary` - Show preview text only (default)
+
+**Visible Elements**
+- Show/hide category badges
+- Show/hide author names
+- Show/hide timestamps
+- Limit number of posts
+
+### Visual Styling
+
+**Theme**
+- Light or dark mode
+- Auto-detect from parent page
+- Custom color overrides
+
+**Layout**
+- Panel width and max-height
+- Padding and spacing
+- Border radius
+- Box shadow
+
+[image]
+
+<Info>
+The embed automatically inherits fonts from your website for seamless integration.
+</Info>
+
+## Advanced Configuration
+
+### JavaScript API
+
+```javascript
+// Initialize with options
+StellarChangelog.init({
+  accountId: 'your-account-id',
+  embedId: 'your-embed-id',
+  theme: 'auto',
+  postFormat: 'summary',
+  showCategory: true,
+  showAuthor: false,
+  maxPosts: 5
+});
+
+// Listen for events
+StellarChangelog.on('post-clicked', (post) => {
+  console.log('User clicked:', post.title);
+});
+```
+
+### Custom Styling
+
+```css
+/* Override embed styles */
+.stellar-changelog {
+  --stellar-primary: #5850ec;
+  --stellar-border-radius: 8px;
+  --stellar-font-family: inherit;
+}
+
+.stellar-changelog-post {
+  margin-bottom: 1rem;
+}
+```
+
+[image]
+
+## Unread Tracking
+
+### How It Works
+- Tracks viewed announcements per user
+- Uses localStorage for persistence
+- Shows unread count badge
+- Clears when panel is opened
+
+### User Identification
+Optional user tracking for better experience:
+
+```javascript
+StellarChangelog.identify({
+  userId: 'user-123',
+  email: 'user@example.com'
+});
+```
+
+## Implementation Examples
+
+### React
+```jsx
+import { useEffect } from 'react';
+
+function ChangelogPanel() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://embed.usestellar.com/changelog.js';
+    script.dataset.stellarAccount = 'your-account-id';
+    script.dataset.stellarEmbed = 'your-embed-id';
+    document.body.appendChild(script);
+    
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+  
+  return <div id="stellar-changelog" />;
+}
+```
+
+### Vue
+```vue
+<template>
+  <div id="stellar-changelog"></div>
+</template>
+
+<script>
+export default {
+  mounted() {
+    const script = document.createElement('script');
+    script.src = 'https://embed.usestellar.com/changelog.js';
+    script.dataset.stellarAccount = 'your-account-id';
+    script.dataset.stellarEmbed = 'your-embed-id';
+    document.body.appendChild(script);
+  }
+}
+</script>
+```
+
+[image]
+
+## Best Practices
+
+**Placement** - Bottom right corner or dedicated "What's New" section
+
+**Timing** - Load after main content for better performance
+
+**Frequency** - Update badge shows automatically when new posts arrive
+
+**Mobile** - Test responsive behavior on small screens
+
+## Troubleshooting
+
+### Embed Not Showing?
+- Verify account and embed IDs
+- Check browser console for errors
+- Ensure announcements are published
+- Confirm domain is allowed in embed settings
+
+### Styling Issues?
+- Check CSS specificity conflicts
+- Use custom CSS variables
+- Inspect element for applied styles
+
+### Performance?
+- Load script asynchronously
+- Use summary format for faster loads
+- Limit number of displayed posts
+
+[image]
+
+<Tip>
+The changelog panel updates in real-time. When you publish new announcements, they appear immediately in all embedded panels.
+</Tip>
+
+Ready to keep users in the loop? Install the changelog panel and watch engagement improve as users discover new features right where they work.
