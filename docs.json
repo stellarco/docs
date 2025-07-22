@@ -42,12 +42,11 @@
             "pages": [
               "insights/overview",
               "insights/creating-first-insight",
-              "insights/setting-up-categories",
+              "insights/setting-up-tags",
               {
                 "group": "Insight Sources",
                 "pages": [
                   "insights/sources/overview",
-                  "insights/sources/web",
                   "insights/sources/custom",
                   "insights/sources/chrome",
                   "insights/sources/email",
@@ -68,7 +67,8 @@
               },
               "insights/linking-features",
               "insights/filters",
-              "insights/triage"
+              "insights/triage",
+              "insights/autopilot-ai"
             ]
           },
           {
