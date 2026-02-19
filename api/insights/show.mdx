@@ -1,0 +1,42 @@
+---
+title: "Get Insight"
+description: "GET /insights/:id"
+---
+
+# Get Insight
+
+## Request
+
+```
+GET /api/v1/insights/:id
+```
+
+## Response
+
+```json
+{
+  "data": {
+    "id": "ins_001",
+    "title": "Needs dark mode",
+    "description": "I can't use this at night, too bright.",
+    "source": "Intercom",
+    "tags": ["ux"],
+    "person": {
+      "id": "per_001",
+      "name": "John Doe",
+      "email": "john@example.com"
+    },
+    "company": {
+      "id": "comp_001",
+      "name": "Acme Corp"
+    },
+    "features": [
+      {
+        "id": "feat_001",
+        "title": "Add dark mode"
+      }
+    ],
+    "created_at": "2025-01-10T08:00:00Z"
+  }
+}
+```

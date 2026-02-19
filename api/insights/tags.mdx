@@ -1,0 +1,28 @@
+---
+title: "Insight Tags"
+description: "GET/POST/DELETE /insights/:id/tags"
+---
+
+# Insight Tags
+
+## List tags
+
+```
+GET /api/v1/insights/:id/tags
+```
+
+## Add a tag
+
+```
+POST /api/v1/insights/:id/tags
+```
+
+```json
+{ "tag_id": "tag_001" }
+```
+
+## Remove a tag
+
+```
+DELETE /api/v1/insights/:id/tags/:tag_id
+```

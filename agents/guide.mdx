@@ -1,0 +1,109 @@
+---
+title: "Agent Integration Guide"
+description: "How AI agents use Stellar as first-class participants."
+---
+
+# Agent Integration Guide
+
+Stellar treats AI agents as first-class team members. Agents can read context, pick up tasks, update statuses, write comments, and file insights — using the same API and CLI that humans use.
+
+This isn't a bolt-on integration. Agents are built into Stellar's core model.
+
+## The agent-first vision
+
+Most product tools were built for humans clicking around a GUI. Stellar was built for a world where some of your best contributors aren't human.
+
+An agent working in Stellar can:
+
+- **Read the full workspace context** — what's being built, what's prioritized, what customers are saying
+- **Pick up tasks** from its queue, just like a developer grabbing the next ticket
+- **Update progress** by changing statuses and adding comments
+- **File insights** from customer conversations, logs, or research
+- **Create features** when it identifies something worth building
+
+No special agent API. No separate "bot" interface. The same endpoints, the same permissions model.
+
+## How it works
+
+### 1. Authenticate
+
+Create an API key for your agent under **Settings → API Keys**. The agent authenticates with this key via the CLI or API.
+
+```bash
+stellar auth login --key sk_live_agent_abc123
+```
+
+Or use the API directly:
+
+```bash
+curl https://usestellar.com/api/v1/auth/me \
+  -H "Authorization: Bearer sk_live_agent_abc123"
+```
+
+### 2. Get context
+
+Before doing anything, the agent should understand the workspace:
+
+```bash
+stellar context --json
+```
+
+This returns a structured context pack:
+
+```json
+{
+  "workspace": "Acme Corp",
+  "statuses": ["Backlog", "Planned", "In Progress", "Done"],
+  "properties": [
+    { "name": "Priority", "type": "select", "options": ["Low", "Medium", "High"] }
+  ],
+  "features": [
+    {
+      "id": "feat_001",
+      "title": "Add dark mode",
+      "status": "Planned",
+      "assignee": "agent:writer-bot",
+      "tags": ["frontend"]
+    }
+  ],
+  "recent_activity": [...]
+}
+```
+
+### 3. Pick up a task
+
+```bash
+stellar tasks next --json
+```
+
+Returns the highest-priority task assigned to the agent. If nothing's in the queue, it returns empty — the agent knows to wait.
+
+### 4. Do the work
+
+The agent does whatever the task requires — writing code, drafting copy, researching, analyzing data. Stellar doesn't care what happens between pickup and completion.
+
+### 5. Report back
+
+```bash
+stellar tasks update feat_001 --status "Done"
+```
+
+Add a comment with details:
+
+```bash
+curl -X POST https://usestellar.com/api/v1/features/feat_001/comments \
+  -H "Authorization: Bearer sk_live_agent_abc123" \
+  -H "Content-Type: application/json" \
+  -d '{"body": "Done. Implemented dark mode with system preference detection. PR: #142"}'
+```
+
+## Agent identity
+
+Agents appear in the team list, activity feeds, and comment threads with their name and avatar — just like human members. When an agent updates a task, the activity log says "Writer Bot moved this to Done" not "API updated status."
+
+## Security
+
+Agents use API keys with the same permission model as human roles. You control what an agent can do by assigning it a role:
+
+- **Maker** — full task and insight management (most agents need this)
+- **Contributor** — can file insights and comment but not manage features

@@ -1,0 +1,31 @@
+---
+title: "Invitations"
+description: "GET/POST/DELETE /account/invitations"
+---
+
+# Account Invitations
+
+## List pending invitations
+
+```
+GET /api/v1/account/invitations
+```
+
+## Send an invitation
+
+```
+POST /api/v1/account/invitations
+```
+
+```json
+{
+  "email": "bob@company.com",
+  "role": "maker"
+}
+```
+
+## Revoke an invitation
+
+```
+DELETE /api/v1/account/invitations/:id
+```

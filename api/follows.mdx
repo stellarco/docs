@@ -1,0 +1,35 @@
+---
+title: "Follows"
+description: "GET/POST/DELETE /follows"
+---
+
+# Follows
+
+Follow features or insights to get notified about changes.
+
+## List follows
+
+```
+GET /api/v1/follows
+```
+
+## Follow an item
+
+```
+POST /api/v1/follows
+```
+
+```json
+{
+  "followable_type": "Feature",
+  "followable_id": "feat_001"
+}
+```
+
+## Unfollow
+
+```
+DELETE /api/v1/follows/:id
+```
+
+Returns `204 No Content`.

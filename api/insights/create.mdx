@@ -1,0 +1,41 @@
+---
+title: "Create Insight"
+description: "POST /insights"
+---
+
+# Create Insight
+
+## Request
+
+```
+POST /api/v1/insights
+```
+
+```json
+{
+  "title": "Needs dark mode",
+  "description": "Customer said: 'I can't use this at night, too bright.'",
+  "source": "Support Chat",
+  "tags": ["ux"],
+  "person_id": "per_001",
+  "feature_ids": ["feat_001"]
+}
+```
+
+**Required:** `title`
+
+## Response
+
+`201 Created`
+
+```json
+{
+  "data": {
+    "id": "ins_002",
+    "title": "Needs dark mode",
+    "source": "Support Chat",
+    "tags": ["ux"],
+    "created_at": "2025-01-15T10:00:00Z"
+  }
+}
+```

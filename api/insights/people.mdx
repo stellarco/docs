@@ -1,0 +1,28 @@
+---
+title: "Link Insight to People"
+description: "GET/POST/DELETE /insights/:id/people"
+---
+
+# Insight → People Links
+
+## List linked people
+
+```
+GET /api/v1/insights/:id/people
+```
+
+## Link a person
+
+```
+POST /api/v1/insights/:id/people
+```
+
+```json
+{ "person_id": "per_001" }
+```
+
+## Unlink a person
+
+```
+DELETE /api/v1/insights/:id/people/:person_id
+```

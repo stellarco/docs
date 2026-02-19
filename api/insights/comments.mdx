@@ -1,0 +1,26 @@
+---
+title: "Insight Comments"
+description: "GET/POST /insights/:id/comments"
+---
+
+# Insight Comments
+
+## List comments
+
+```
+GET /api/v1/insights/:id/comments
+```
+
+## Create a comment
+
+```
+POST /api/v1/insights/:id/comments
+```
+
+```json
+{
+  "body": "This matches the dark mode request from last week."
+}
+```
+
+Returns `201 Created`.

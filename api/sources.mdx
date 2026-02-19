@@ -1,0 +1,36 @@
+---
+title: "Sources"
+description: "GET/POST/PUT/DELETE /sources"
+---
+
+# Sources
+
+Manage insight sources (e.g., "Intercom", "Sales Call", "User Interview").
+
+## List sources
+
+```
+GET /api/v1/sources
+```
+
+## Create a source
+
+```
+POST /api/v1/sources
+```
+
+```json
+{ "name": "User Interview" }
+```
+
+## Update a source
+
+```
+PUT /api/v1/sources/:id
+```
+
+## Delete a source
+
+```
+DELETE /api/v1/sources/:id
+```

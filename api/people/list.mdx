@@ -1,0 +1,31 @@
+---
+title: "List People"
+description: "GET /people"
+---
+
+# List People
+
+Returns customers/users tracked in your workspace.
+
+## Request
+
+```
+GET /api/v1/people
+```
+
+## Response
+
+```json
+{
+  "data": [
+    {
+      "id": "per_001",
+      "name": "John Doe",
+      "email": "john@example.com",
+      "company": { "id": "comp_001", "name": "Acme Corp" },
+      "insights_count": 5,
+      "created_at": "2025-01-01T00:00:00Z"
+    }
+  ]
+}
+```

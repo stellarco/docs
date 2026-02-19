@@ -1,0 +1,28 @@
+---
+title: "Publish Announcement"
+description: "POST /announcements/:id/publish"
+---
+
+# Publish Announcement
+
+Makes a draft announcement live on your portal.
+
+## Request
+
+```
+POST /api/v1/announcements/:id/publish
+```
+
+Optionally set the publish date:
+
+```json
+{
+  "published_at": "2025-02-01T09:00:00Z"
+}
+```
+
+If omitted, publishes immediately.
+
+## Response
+
+Returns the announcement with `status: "published"`.

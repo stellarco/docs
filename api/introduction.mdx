@@ -1,0 +1,99 @@
+---
+title: "API Introduction"
+description: "Authenticate and start using the Stellar API."
+---
+
+# API Reference
+
+The Stellar API is a REST API that gives you full access to your workspace data. Every action you can take in the web app, you can do via the API.
+
+## Base URL
+
+```
+https://usestellar.com/api/v1
+```
+
+## Authentication
+
+All requests require an API key passed as a Bearer token:
+
+```bash
+curl https://usestellar.com/api/v1/features \
+  -H "Authorization: Bearer sk_live_your_api_key"
+```
+
+### Getting an API key
+
+1. Go to **Settings → API Keys** in the Stellar dashboard
+2. Click **Create New Key**
+3. Name it (e.g., "CI Pipeline" or "Agent: Writer Bot")
+4. Copy the key — it's shown once
+
+Or via the CLI:
+
+```bash
+stellar keys create --name "My Integration"
+```
+
+## Request format
+
+- Send JSON bodies with `Content-Type: application/json`
+- All endpoints return JSON
+
+## Response format
+
+Successful responses:
+
+```json
+{
+  "data": { ... }
+}
+```
+
+List endpoints include pagination:
+
+```json
+{
+  "data": [...],
+  "meta": {
+    "total": 142,
+    "page": 1,
+    "per_page": 25
+  }
+}
+```
+
+## Errors
+
+```json
+{
+  "error": {
+    "code": "not_found",
+    "message": "Feature not found"
+  }
+}
+```
+
+Standard HTTP status codes:
+
+| Code | Meaning |
+|------|---------|
+| `200` | Success |
+| `201` | Created |
+| `204` | Deleted (no content) |
+| `400` | Bad request |
+| `401` | Unauthorized (bad or missing API key) |
+| `403` | Forbidden (insufficient permissions) |
+| `404` | Not found |
+| `422` | Validation error |
+| `429` | Rate limited |
+
+## Rate limiting
+
+1,000 requests per minute per API key. The response includes rate limit headers:
+
+```
+X-RateLimit-Limit: 1000
+X-RateLimit-Remaining: 997
+X-RateLimit-Reset: 1700000000
+```

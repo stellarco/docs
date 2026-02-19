@@ -1,0 +1,36 @@
+---
+title: "Update Portal"
+description: "PUT /portal"
+---
+
+# Update Portal Configuration
+
+## Request
+
+```
+PUT /api/v1/portal
+```
+
+```json
+{
+  "name": "Acme Updates",
+  "description": "Product updates and release notes",
+  "accent_color": "#4248CE"
+}
+```
+
+## Upload portal image
+
+```
+POST /api/v1/portal/image
+```
+
+Send as `multipart/form-data`.
+
+## Get portal URL
+
+```
+GET /api/v1/portal/url
+```
+
+Returns the current portal URL (subdomain or custom domain).

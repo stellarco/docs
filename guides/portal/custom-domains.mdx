@@ -1,0 +1,31 @@
+---
+title: "Custom Domains"
+description: "Use your own domain for your portal."
+---
+
+# Custom Domains
+
+Instead of `yourworkspace.usestellar.com`, use your own domain like `updates.yourcompany.com`.
+
+## Setup
+
+1. Go to **Settings → Portal → Custom Domain**
+2. Enter your domain (e.g., `updates.yourcompany.com`)
+3. Add the CNAME record to your DNS provider:
+   ```
+   CNAME  updates.yourcompany.com  →  portal.usestellar.com
+   ```
+4. Click **Verify Domain**
+5. SSL is provisioned automatically (takes a few minutes)
+
+## Verification
+
+Stellar checks your DNS configuration and shows the status:
+
+- **Pending** — waiting for DNS propagation
+- **Active** — domain verified, SSL active
+- **Failed** — DNS record not found (check your configuration)
+
+## Removing a custom domain
+
+Remove the custom domain anytime. Your portal reverts to `yourworkspace.usestellar.com`.

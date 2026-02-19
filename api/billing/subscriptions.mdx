@@ -1,0 +1,26 @@
+---
+title: "Subscriptions"
+description: "GET/POST /billing/subscriptions"
+---
+
+# Subscriptions
+
+## Get current subscription
+
+```
+GET /api/v1/billing/subscriptions
+```
+
+## Create or change subscription
+
+```
+POST /api/v1/billing/subscriptions
+```
+
+```json
+{
+  "plan_id": "plan_pro"
+}
+```
+
+Changes take effect at the next billing cycle for downgrades, immediately for upgrades.

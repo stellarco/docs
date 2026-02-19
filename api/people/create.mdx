@@ -1,0 +1,26 @@
+---
+title: "Create Person"
+description: "POST /people"
+---
+
+# Create Person
+
+## Request
+
+```
+POST /api/v1/people
+```
+
+```json
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "company_id": "comp_001"
+}
+```
+
+**Required:** `name`
+
+## Response
+
+`201 Created` with the person object.

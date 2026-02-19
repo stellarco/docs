@@ -1,0 +1,23 @@
+---
+title: "Update View"
+description: "PUT /views/:id"
+---
+
+# Update View
+
+## Request
+
+```
+PUT /api/v1/views/:id
+```
+
+```json
+{
+  "name": "Critical Priority",
+  "filters": { "properties.priority": "Critical" }
+}
+```
+
+## Response
+
+Returns the updated view.

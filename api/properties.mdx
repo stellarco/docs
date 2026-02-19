@@ -1,0 +1,40 @@
+---
+title: "Properties"
+description: "GET/POST/PUT/DELETE /properties"
+---
+
+# Properties
+
+Manage custom property definitions for features.
+
+## List properties
+
+```
+GET /api/v1/properties
+```
+
+## Create a property
+
+```
+POST /api/v1/properties
+```
+
+```json
+{
+  "name": "Priority",
+  "type": "select",
+  "options": ["Low", "Medium", "High", "Critical"]
+}
+```
+
+## Update a property
+
+```
+PUT /api/v1/properties/:id
+```
+
+## Delete a property
+
+```
+DELETE /api/v1/properties/:id
+```

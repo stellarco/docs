@@ -1,0 +1,28 @@
+---
+title: "Create Announcement"
+description: "POST /announcements"
+---
+
+# Create Announcement
+
+## Request
+
+```
+POST /api/v1/announcements
+```
+
+```json
+{
+  "title": "Dark mode is here",
+  "body": "You asked, we built it. Dark mode is now available...",
+  "tags": ["feature"]
+}
+```
+
+**Required:** `title`, `body`
+
+Creates a draft. Use the [publish endpoint](/api/announcements/publish) to make it live.
+
+## Response
+
+`201 Created` with the announcement object.

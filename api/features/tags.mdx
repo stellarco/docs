@@ -1,0 +1,34 @@
+---
+title: "Feature Tags"
+description: "GET/POST/DELETE /features/:id/tags"
+---
+
+# Feature Tags
+
+Manage tags on a feature.
+
+## List tags
+
+```
+GET /api/v1/features/:id/tags
+```
+
+## Add a tag
+
+```
+POST /api/v1/features/:id/tags
+```
+
+```json
+{
+  "tag_id": "tag_001"
+}
+```
+
+## Remove a tag
+
+```
+DELETE /api/v1/features/:id/tags/:tag_id
+```
+
+Returns `204 No Content`.

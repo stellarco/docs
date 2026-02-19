@@ -1,0 +1,36 @@
+---
+title: "Update Account"
+description: "PUT /account"
+---
+
+# Update Account
+
+Update workspace settings. Admin only.
+
+## Request
+
+```
+PUT /api/v1/account
+```
+
+```json
+{
+  "name": "Acme Corporation"
+}
+```
+
+## Upload workspace image
+
+```
+POST /api/v1/account/image
+```
+
+Send as `multipart/form-data`.
+
+## Check domain status
+
+```
+GET /api/v1/account/domain_status
+```
+
+Returns the verification status of your custom domain.

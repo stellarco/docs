@@ -1,0 +1,42 @@
+---
+title: "Feature Comments"
+description: "GET/POST /features/:id/comments"
+---
+
+# Feature Comments
+
+## List comments
+
+```
+GET /api/v1/features/:id/comments
+```
+
+```json
+{
+  "data": [
+    {
+      "id": "com_001",
+      "body": "Started working on this. PR incoming.",
+      "author": {
+        "id": "usr_abc123",
+        "name": "Alice Chen"
+      },
+      "created_at": "2025-01-20T14:30:00Z"
+    }
+  ]
+}
+```
+
+## Create a comment
+
+```
+POST /api/v1/features/:id/comments
+```
+
+```json
+{
+  "body": "Done. Implemented with system preference detection. PR #142."
+}
+```
+
+Returns `201 Created` with the new comment.

@@ -1,0 +1,39 @@
+---
+title: "Feature Properties"
+description: "GET/PUT /features/:id/properties"
+---
+
+# Feature Properties
+
+Get or update custom property values on a feature.
+
+## Get properties
+
+```
+GET /api/v1/features/:id/properties
+```
+
+```json
+{
+  "data": {
+    "priority": "High",
+    "effort": 5,
+    "platform": ["iOS", "Android"]
+  }
+}
+```
+
+## Update properties
+
+```
+PUT /api/v1/features/:id/properties
+```
+
+```json
+{
+  "priority": "Critical",
+  "effort": 8
+}
+```
+
+Only provided properties are updated. Others remain unchanged.

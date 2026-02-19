@@ -1,0 +1,28 @@
+---
+title: "Link Insight to Features"
+description: "GET/POST/DELETE /insights/:id/features"
+---
+
+# Insight → Feature Links
+
+## List linked features
+
+```
+GET /api/v1/insights/:id/features
+```
+
+## Link a feature
+
+```
+POST /api/v1/insights/:id/features
+```
+
+```json
+{ "feature_id": "feat_001" }
+```
+
+## Unlink a feature
+
+```
+DELETE /api/v1/insights/:id/features/:feature_id
+```

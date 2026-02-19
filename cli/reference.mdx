@@ -1,0 +1,190 @@
+---
+title: "CLI Reference"
+description: "Complete reference for all Stellar CLI commands."
+---
+
+# CLI Reference
+
+## Authentication
+
+### `stellar auth login`
+
+Authenticate with your Stellar account. Prompts for email/password or accepts an API key.
+
+```bash
+stellar auth login
+stellar auth login --key sk_live_abc123
+```
+
+### `stellar auth logout`
+
+Clear stored credentials.
+
+```bash
+stellar auth logout
+```
+
+### `stellar auth me`
+
+Print the authenticated user's profile.
+
+```bash
+stellar auth me
+```
+
+---
+
+## Tasks
+
+### `stellar tasks list`
+
+List features/tasks in your workspace.
+
+```bash
+stellar tasks list
+stellar tasks list --status "In Progress"
+stellar tasks list --assignee me
+stellar tasks list --tag "backend"
+stellar tasks list --limit 20
+```
+
+**Flags:**
+| Flag | Description |
+|------|-------------|
+| `--status` | Filter by status name |
+| `--assignee` | Filter by assignee (`me` or user ID) |
+| `--tag` | Filter by tag |
+| `--limit` | Max results (default: 50) |
+| `--json` | Output as JSON |
+
+### `stellar tasks create`
+
+Create a new feature/task.
+
+```bash
+stellar tasks create --title "Add dark mode" --status "Planned"
+stellar tasks create --title "Fix login bug" --status "In Progress" --assignee me
+```
+
+**Flags:**
+| Flag | Description |
+|------|-------------|
+| `--title` | Task title (required) |
+| `--description` | Task description |
+| `--status` | Initial status |
+| `--assignee` | Assignee (user ID or `me`) |
+| `--tag` | Add tags (repeatable) |
+| `--json` | Output as JSON |
+
+### `stellar tasks show`
+
+Show a single task by ID.
+
+```bash
+stellar tasks show feat_abc123
+stellar tasks show feat_abc123 --json
+```
+
+### `stellar tasks update`
+
+Update a task's properties.
+
+```bash
+stellar tasks update feat_abc123 --status "Done"
+stellar tasks update feat_abc123 --assignee usr_xyz --tag "shipped"
+```
+
+**Flags:**
+| Flag | Description |
+|------|-------------|
+| `--title` | Update title |
+| `--status` | Update status |
+| `--assignee` | Update assignee |
+| `--tag` | Add a tag |
+| `--json` | Output as JSON |
+
+### `stellar tasks next`
+
+Get the next task assigned to you (highest priority, unstarted).
+
+```bash
+stellar tasks next
+stellar tasks next --json
+```
+
+This is the primary command for agent task pickup. Returns one task or nothing if the queue is empty.
+
+---
+
+## Views
+
+### `stellar views list`
+
+List saved views in the workspace.
+
+```bash
+stellar views list
+stellar views list --json
+```
+
+### `stellar views show`
+
+Show a specific view and its features.
+
+```bash
+stellar views show view_abc123
+stellar views show view_abc123 --json
+```
+
+---
+
+## API Keys
+
+### `stellar keys list`
+
+List all API keys for the workspace.
+
+```bash
+stellar keys list
+```
+
+### `stellar keys create`
+
+Generate a new API key.
+
+```bash
+stellar keys create --name "CI Pipeline"
+```
+
+The key is displayed once. Store it securely.
+
+### `stellar keys revoke`
+
+Revoke an API key.
+
+```bash
+stellar keys revoke key_abc123
+```
+
+---
+
+## Context
+
+### `stellar context`
+
+Get workspace context — features, statuses, properties, recent activity.
+
+```bash
+stellar context
+stellar context --json
+```
+
+The `--json` flag outputs structured data designed for AI agents. It includes:
+
+- Current workspace name and settings
+- All statuses and their order
+- All properties and their types
+- Recent features with status, assignee, and tags
+- Recent activity feed
+
+Agents use this to understand the workspace before picking up tasks.

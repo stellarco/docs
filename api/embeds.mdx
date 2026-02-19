@@ -1,0 +1,32 @@
+---
+title: "Embeds"
+description: "GET/POST /embeds"
+---
+
+# Embeds
+
+Manage embeddable widgets for your portal.
+
+## List embeds
+
+```
+GET /api/v1/embeds
+```
+
+## Create an embed
+
+```
+POST /api/v1/embeds
+```
+
+```json
+{
+  "type": "changelog_panel",
+  "config": {
+    "position": "bottom-right",
+    "theme": "light"
+  }
+}
+```
+
+Returns the embed with an `embed_id` you can use in the JavaScript snippet.

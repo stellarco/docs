@@ -1,0 +1,32 @@
+---
+title: "Payment Methods"
+description: "GET /billing/method, POST /billing/setup_intent"
+---
+
+# Payment Methods
+
+## Get current payment method
+
+```
+GET /api/v1/billing/method
+```
+
+## Create a setup intent
+
+```
+POST /api/v1/billing/setup_intent
+```
+
+Returns a Stripe client secret for adding a new payment method on the frontend.
+
+## Update payment method
+
+```
+POST /api/v1/billing/payment
+```
+
+```json
+{
+  "payment_method_id": "pm_abc123"
+}
+```

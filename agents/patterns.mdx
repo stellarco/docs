@@ -1,0 +1,107 @@
+---
+title: "Agent Patterns"
+description: "Common patterns for agents working in Stellar."
+---
+
+# Agent Patterns
+
+Real-world patterns for integrating AI agents into your Stellar workflow.
+
+## Pattern 1: Task worker
+
+The simplest pattern. An agent polls for tasks, does the work, and reports back.
+
+```
+loop:
+  task = stellar tasks next --json
+  if task is empty: wait 60s, continue
+  
+  stellar tasks update {task.id} --status "In Progress"
+  
+  result = do_work(task)
+  
+  post comment with result
+  stellar tasks update {task.id} --status "Done"
+```
+
+This is how most agents start. A human creates and assigns tasks; the agent picks them up.
+
+## Pattern 2: Insight collector
+
+An agent that monitors external sources and files insights automatically.
+
+```
+monitor support_tickets, social_mentions, app_reviews:
+  for each new item:
+    POST /api/v1/insights
+      title: summarize(item)
+      description: item.content
+      source: item.source
+      tags: classify(item)
+```
+
+Pairs well with triage — the agent files raw insights, a human (or another agent) triages them.
+
+## Pattern 3: Context-aware assistant
+
+An agent that pulls workspace context to inform its work elsewhere.
+
+```bash
+# Agent reads Stellar context before starting any task
+context=$(stellar context --json)
+
+# Uses it to understand priorities, current work, customer pain points
+# Makes better decisions with full product context
+```
+
+This pattern is powerful for coding agents, writing agents, or research agents that need product awareness.
+
+## Pattern 4: Human-agent handoff
+
+Some tasks need both. An agent does the first pass, a human reviews.
+
+1. Human creates a task and assigns it to the agent
+2. Agent does the work and moves status to "Review"
+3. Agent reassigns to the human reviewer
+4. Human reviews, provides feedback via comment
+5. If changes needed: human reassigns back to agent
+6. If approved: human moves to "Done"
+
+Add a custom status like "Review" to your workflow to support this pattern.
+
+## Pattern 5: Triage agent
+
+An agent that processes new insights and suggests categorization.
+
+```
+for each unprocessed insight:
+  analyze content
+  suggest tags
+  suggest linked features
+  add comment: "Suggested: tags=[pricing, ux], related to feat_042"
+  
+  human reviews and approves/adjusts in triage view
+```
+
+The agent doesn't auto-commit — it suggests. Humans stay in control of the product decisions.
+
+## Assigning tasks to agents
+
+From the UI, agents appear in the assignee picker. From the API:
+
+```bash
+curl -X PUT https://usestellar.com/api/v1/features/feat_001 \
+  -H "Authorization: Bearer sk_live_abc123" \
+  -H "Content-Type: application/json" \
+  -d '{"assignee_id": "usr_agent_writer"}'
+```
+
+## Tracking agent work
+
+Use views to monitor agent activity:
+
+- Create a view filtered to `Assignee = [agent name]`
+- Group by status to see what's in progress vs. done
+- Check the activity feed for agent comments and updates
+
+Agents show up in all the same reporting and tracking that humans do.

@@ -1,0 +1,29 @@
+---
+title: "Get View"
+description: "GET /views/:id"
+---
+
+# Get View
+
+Returns the view configuration and its matching features.
+
+## Request
+
+```
+GET /api/v1/views/:id
+```
+
+## Response
+
+```json
+{
+  "data": {
+    "id": "view_001",
+    "name": "High Priority",
+    "filters": { "properties.priority": "High" },
+    "features": [
+      { "id": "feat_001", "title": "Add dark mode", "status": "Planned" }
+    ]
+  }
+}
+```

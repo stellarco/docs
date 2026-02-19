@@ -1,0 +1,18 @@
+---
+title: "Unpublish Announcement"
+description: "POST /announcements/:id/unpublish"
+---
+
+# Unpublish Announcement
+
+Reverts a published announcement to draft. Removes it from the portal.
+
+## Request
+
+```
+POST /api/v1/announcements/:id/unpublish
+```
+
+## Response
+
+Returns the announcement with `status: "draft"`.

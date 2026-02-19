@@ -1,0 +1,42 @@
+---
+title: "Update Feature"
+description: "PUT /features/:id"
+---
+
+# Update Feature
+
+## Request
+
+```
+PUT /api/v1/features/:id
+```
+
+```json
+{
+  "title": "Add dark mode (v2)",
+  "status": "In Progress",
+  "assignee_id": "usr_xyz789",
+  "properties": {
+    "priority": "Critical"
+  }
+}
+```
+
+All fields are optional. Only provided fields are updated.
+
+## Response
+
+```json
+{
+  "data": {
+    "id": "feat_001",
+    "title": "Add dark mode (v2)",
+    "status": "In Progress",
+    "assignee": {
+      "id": "usr_xyz789",
+      "name": "Writer Bot"
+    },
+    "updated_at": "2025-01-21T09:00:00Z"
+  }
+}
+```

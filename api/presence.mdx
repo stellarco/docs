@@ -1,0 +1,29 @@
+---
+title: "Presence"
+description: "GET /presence"
+---
+
+# Presence
+
+Returns which team members are currently online.
+
+## Request
+
+```
+GET /api/v1/presence
+```
+
+## Response
+
+```json
+{
+  "data": [
+    {
+      "user_id": "usr_abc123",
+      "name": "Alice Chen",
+      "status": "online",
+      "last_seen": "2025-01-20T14:30:00Z"
+    }
+  ]
+}
+```

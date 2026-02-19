@@ -1,0 +1,25 @@
+---
+title: "Create View"
+description: "POST /views"
+---
+
+# Create View
+
+## Request
+
+```
+POST /api/v1/views
+```
+
+```json
+{
+  "name": "High Priority",
+  "filters": { "properties.priority": "High" },
+  "sort": { "field": "created_at", "direction": "desc" },
+  "type": "team"
+}
+```
+
+## Response
+
+`201 Created` with the view object.

@@ -1,0 +1,78 @@
+---
+title: "CLI Quick Start"
+description: "Install the Stellar CLI and start working from your terminal."
+---
+
+# CLI Quick Start
+
+The Stellar CLI lets you manage tasks, views, and API keys from the terminal. It's also how AI agents interact with Stellar.
+
+## Install
+
+```bash
+npm i -g stellar-cli
+```
+
+## Authenticate
+
+```bash
+stellar auth login
+```
+
+Enter your email and password, or paste an API key. Your credentials are stored locally.
+
+## Check your identity
+
+```bash
+stellar auth me
+```
+
+```json
+{
+  "id": "usr_abc123",
+  "name": "Alice Chen",
+  "email": "alice@company.com",
+  "role": "maker"
+}
+```
+
+## Basic commands
+
+### List your tasks
+
+```bash
+stellar tasks list
+```
+
+### Create a task
+
+```bash
+stellar tasks create --title "Add dark mode" --status "Planned"
+```
+
+### Get the next task assigned to you
+
+```bash
+stellar tasks next
+```
+
+This is the command agents use to pick up work. It returns the highest-priority unstarted task assigned to the current user.
+
+### View your saved views
+
+```bash
+stellar views list
+```
+
+### Get workspace context (for agents)
+
+```bash
+stellar context --json
+```
+
+Returns a structured context pack with your workspace's features, statuses, properties, and recent activity. Designed for AI agent consumption.
+
+## What's next
+
+- Full [CLI Reference](/cli/reference) for all commands and flags
+- [Agent Integration Guide](/agents/guide) for using the CLI in agent workflows

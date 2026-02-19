@@ -14,131 +14,87 @@
         "tab": "Guides",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Getting Started",
             "pages": [
-              "index",
-              "process"
-            ]
-          },
-          {
-            "group": "Account",
-            "pages": [
-              "account/profile",
-              "account/notifications",
-              "account/as-contributor",
-              "account/as-maker",
-              "account/as-admin"
-            ]
-          },
-          {
-            "group": "Team",
-            "pages": [
-              "team/roles",
-              "team/authentication"
+              "guides/what-is-stellar",
+              "guides/signup",
+              "guides/first-project"
             ]
           },
           {
             "group": "Insights",
             "pages": [
-              "insights/overview",
-              "insights/creating-first-insight",
-              "insights/setting-up-tags",
-              {
-                "group": "Insight Sources",
-                "pages": [
-                  "insights/sources/overview",
-                  "insights/sources/custom",
-                  "insights/sources/chrome",
-                  "insights/sources/email",
-                  {
-                    "group": "Integrations",
-                    "pages": [
-                      "insights/sources/integrations/intercom",
-                      "insights/sources/integrations/helpscout",
-                      "insights/sources/integrations/crisp",
-                      "insights/sources/integrations/typeform",
-                      "insights/sources/integrations/tally",
-                      "insights/sources/integrations/salesforce",
-                      "insights/sources/integrations/hubspot",
-                      "insights/sources/integrations/zapier"
-                    ]
-                  }
-                ]
-              },
-              "insights/linking-features",
-              "insights/filters",
-              "insights/triage",
-              "insights/autopilot-ai"
+              "guides/insights/overview",
+              "guides/insights/sources",
+              "guides/insights/tagging",
+              "guides/insights/triage"
             ]
           },
           {
             "group": "Features",
             "pages": [
-              "features/overview",
-              "features/creating-first-feature",
-              "features/setting-up-properties",
-              "features/document-ai"
+              "guides/features/overview",
+              "guides/features/properties",
+              "guides/features/statuses",
+              "guides/features/assignment"
             ]
           },
           {
             "group": "Views",
             "pages": [
-              "views/overview",
-              "views/filter-and-sort",
-              "views/saving-views",
-              "views/team-views",
-              "views/kanban"
+              "guides/views/overview",
+              "guides/views/filters-and-sorting",
+              "guides/views/kanban"
             ]
           },
           {
             "group": "Announcements",
             "pages": [
-              "announcements/overview",
-              "announcements/creating-first-announcement",
-              "announcements/additional-settings",
-              "announcements/private-posts",
-              "announcements/scheduling",
-              "announcements/automate-with-ai"
+              "guides/announcements/overview",
+              "guides/announcements/scheduling",
+              "guides/announcements/publishing"
             ]
           },
           {
-            "group": "Editor",
+            "group": "Team",
             "pages": [
-              "editor/markdown",
-              "editor/embeds"
+              "guides/team/roles",
+              "guides/team/inviting-members"
+            ]
+          },
+          {
+            "group": "Account",
+            "pages": [
+              "guides/account/profile",
+              "guides/account/notifications",
+              "guides/account/billing"
             ]
           },
           {
             "group": "Portal",
             "pages": [
-              "portal/setting-up-portal",
-              "portal/add-custom-domain",
-              "portal/customizing-look-and-feel",
-              "portal/add-analytics-integration",
-              "portal/email-subscriptions",
-              "portal/rss"
+              "guides/portal/overview",
+              "guides/portal/custom-domains",
+              "guides/portal/customization"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "CLI & Agents",
+        "groups": [
+          {
+            "group": "CLI",
+            "pages": [
+              "cli/quickstart",
+              "cli/reference"
             ]
           },
           {
-            "group": "Embeds",
+            "group": "Agent Integration",
             "pages": [
-              "embeds/overview",
-              "embeds/changelog-panel"
-            ]
-          },
-          {
-            "group": "Integrations",
-            "pages": [
-              "integrations/types",
-              {
-                "group": "Portal",
-                "pages": [
-                  "integrations/kit",
-                  "integrations/loops",
-                  "integrations/google-analytics",
-                  "integrations/fathom-analytics"
-                ]
-              }
+              "agents/guide",
+              "agents/patterns"
             ]
           }
         ]
@@ -147,17 +103,129 @@
         "tab": "API Reference",
         "groups": [
           {
-            "group": "API Documentation",
+            "group": "Overview",
             "pages": [
-              "api-reference/introduction"
+              "api/introduction"
+            ]
+          },
+          {
+            "group": "Auth",
+            "pages": [
+              "api/auth/login",
+              "api/auth/signup",
+              "api/auth/logout",
+              "api/auth/me"
+            ]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              "api/features/list",
+              "api/features/create",
+              "api/features/show",
+              "api/features/update",
+              "api/features/delete",
+              "api/features/comments",
+              "api/features/activities",
+              "api/features/tags",
+              "api/features/properties"
             ]
           },
           {
             "group": "Insights",
             "pages": [
-              "api-reference/insights/get",
-              "api-reference/insights/create",
-              "api-reference/insights/delete"
+              "api/insights/list",
+              "api/insights/create",
+              "api/insights/show",
+              "api/insights/update",
+              "api/insights/delete",
+              "api/insights/comments",
+              "api/insights/tags",
+              "api/insights/features",
+              "api/insights/people"
+            ]
+          },
+          {
+            "group": "Announcements",
+            "pages": [
+              "api/announcements/list",
+              "api/announcements/create",
+              "api/announcements/show",
+              "api/announcements/update",
+              "api/announcements/delete",
+              "api/announcements/publish",
+              "api/announcements/unpublish",
+              "api/announcements/cover-image"
+            ]
+          },
+          {
+            "group": "Views",
+            "pages": [
+              "api/views/list",
+              "api/views/create",
+              "api/views/show",
+              "api/views/update",
+              "api/views/favorites"
+            ]
+          },
+          {
+            "group": "People",
+            "pages": [
+              "api/people/list",
+              "api/people/create",
+              "api/people/show",
+              "api/people/update",
+              "api/people/delete"
+            ]
+          },
+          {
+            "group": "Companies",
+            "pages": [
+              "api/companies/list",
+              "api/companies/create",
+              "api/companies/show",
+              "api/companies/update",
+              "api/companies/delete"
+            ]
+          },
+          {
+            "group": "Account",
+            "pages": [
+              "api/account/show",
+              "api/account/update",
+              "api/account/members",
+              "api/account/invitations"
+            ]
+          },
+          {
+            "group": "Billing",
+            "pages": [
+              "api/billing/plans",
+              "api/billing/info",
+              "api/billing/payment-methods",
+              "api/billing/subscriptions"
+            ]
+          },
+          {
+            "group": "Portal",
+            "pages": [
+              "api/portal/show",
+              "api/portal/update"
+            ]
+          },
+          {
+            "group": "Other",
+            "pages": [
+              "api/tags",
+              "api/categories",
+              "api/sources",
+              "api/properties",
+              "api/embeds",
+              "api/notifications",
+              "api/api-keys",
+              "api/profile",
+              "api/presence",
+              "api/follows"
             ]
           }
         ]

@@ -1,0 +1,33 @@
+---
+title: "Plans"
+description: "GET /billing/plans"
+---
+
+# Billing Plans
+
+## Request
+
+```
+GET /api/v1/billing/plans
+```
+
+## Response
+
+```json
+{
+  "data": [
+    {
+      "id": "plan_free",
+      "name": "Free",
+      "price": 0,
+      "features": ["Up to 3 members", "100 insights", "Basic portal"]
+    },
+    {
+      "id": "plan_pro",
+      "name": "Pro",
+      "price": 29,
+      "features": ["Unlimited members", "Unlimited insights", "Custom domain", "Agent access"]
+    }
+  ]
+}
+```

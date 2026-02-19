@@ -1,0 +1,22 @@
+---
+title: "Cover Image"
+description: "POST/DELETE /announcements/:id/cover_image"
+---
+
+# Announcement Cover Image
+
+## Upload cover image
+
+```
+POST /api/v1/announcements/:id/cover_image
+```
+
+Send as `multipart/form-data` with the file in the `image` field.
+
+## Remove cover image
+
+```
+DELETE /api/v1/announcements/:id/cover_image
+```
+
+Returns `204 No Content`.

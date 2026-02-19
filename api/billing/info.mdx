@@ -1,0 +1,27 @@
+---
+title: "Billing Info"
+description: "GET /billing/info"
+---
+
+# Billing Info
+
+Returns current subscription and billing details.
+
+## Request
+
+```
+GET /api/v1/billing/info
+```
+
+## Response
+
+```json
+{
+  "data": {
+    "plan": "pro",
+    "status": "active",
+    "current_period_end": "2025-03-01T00:00:00Z",
+    "card_last4": "4242"
+  }
+}
+```

@@ -1,0 +1,29 @@
+---
+title: "Get Account"
+description: "GET /account"
+---
+
+# Get Account
+
+Returns workspace account details.
+
+## Request
+
+```
+GET /api/v1/account
+```
+
+## Response
+
+```json
+{
+  "data": {
+    "id": "acc_001",
+    "name": "Acme Corp",
+    "domain": "acme",
+    "members_count": 8,
+    "plan": "pro",
+    "created_at": "2024-06-01T00:00:00Z"
+  }
+}
+```

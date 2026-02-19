@@ -1,0 +1,40 @@
+---
+title: "Profile"
+description: "GET/PUT /profile"
+---
+
+# Profile
+
+## Get profile
+
+```
+GET /api/v1/profile
+```
+
+## Update profile
+
+```
+PUT /api/v1/profile
+```
+
+```json
+{
+  "name": "Alice Chen"
+}
+```
+
+## Upload avatar
+
+```
+POST /api/v1/profile/avatar
+```
+
+Send as `multipart/form-data`.
+
+## Complete setup
+
+```
+POST /api/v1/profile/complete_setup
+```
+
+Marks the onboarding flow as complete.

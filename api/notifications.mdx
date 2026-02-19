@@ -1,0 +1,46 @@
+---
+title: "Notifications"
+description: "GET/PUT /notifications"
+---
+
+# Notifications
+
+## List notifications
+
+```
+GET /api/v1/notifications
+```
+
+Returns the current user's notifications, newest first.
+
+## Mark as read
+
+```
+PUT /api/v1/notifications/:id
+```
+
+```json
+{ "read": true }
+```
+
+## Notification settings
+
+### Get settings
+
+```
+GET /api/v1/notifications/settings
+```
+
+### Update settings
+
+```
+PUT /api/v1/notifications/settings
+```
+
+```json
+{
+  "email_on_comment": true,
+  "email_on_assignment": true,
+  "email_on_status_change": false
+}
+```

@@ -1,0 +1,43 @@
+---
+title: "Login"
+description: "POST /auth/login"
+---
+
+# Login
+
+Authenticate with email and password to receive an access token.
+
+## Request
+
+```
+POST /api/v1/auth/login
+```
+
+```json
+{
+  "email": "alice@company.com",
+  "password": "your-password"
+}
+```
+
+## Response
+
+```json
+{
+  "data": {
+    "token": "sk_live_abc123...",
+    "user": {
+      "id": "usr_abc123",
+      "name": "Alice Chen",
+      "email": "alice@company.com",
+      "role": "admin"
+    }
+  }
+}
+```
+
+## Errors
+
+| Code | Reason |
+|------|--------|
+| `401` | Invalid email or password |

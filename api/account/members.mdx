@@ -1,0 +1,33 @@
+---
+title: "Members"
+description: "GET/DELETE /account/members"
+---
+
+# Account Members
+
+## List members
+
+```
+GET /api/v1/account/members
+```
+
+```json
+{
+  "data": [
+    {
+      "id": "usr_abc123",
+      "name": "Alice Chen",
+      "email": "alice@company.com",
+      "role": "admin"
+    }
+  ]
+}
+```
+
+## Remove a member
+
+```
+DELETE /api/v1/account/members/:id
+```
+
+Admin only. Returns `204 No Content`.

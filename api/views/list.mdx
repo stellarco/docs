@@ -1,0 +1,28 @@
+---
+title: "List Views"
+description: "GET /views"
+---
+
+# List Views
+
+## Request
+
+```
+GET /api/v1/views
+```
+
+## Response
+
+```json
+{
+  "data": [
+    {
+      "id": "view_001",
+      "name": "My Work",
+      "type": "personal",
+      "filters": { "assignee": "me" },
+      "sort": { "field": "updated_at", "direction": "desc" }
+    }
+  ]
+}
+```
